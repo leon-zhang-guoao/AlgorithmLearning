@@ -32,7 +32,8 @@ public class Code06_PrintB {
     }
 
     public static void main(String[] args) {
-        print(Integer.MAX_VALUE);
+        print(32);
+        System.out.println(3 & 1);
 
     }
 }
