@@ -3,6 +3,7 @@ public class SelectionSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println();
     }
 
     public static void swap(int[] arr, int a, int b) {
@@ -51,9 +52,37 @@ public class SelectionSort {
         printArr(arr);
     }
 
+    public static int[] randomArr(int maxLen, int maxValue) {
+        int len = (int) (Math.random() * maxLen);
+
+        if (len < 2) {
+            len += 1;
+        }
+
+
+        int[] b = new int[len];
+        for (int i = 0; i < b.length; i++) {
+            b[i] = (int) (Math.random() * maxValue);
+
+        }
+
+
+        return b;
+
+    }
+
     public static void main(String[] args) {
         int[] aa = {1, 5, 41, 0, 877, 4561, 2, 3};
-        insertSort(aa);
+//        insertSort(aa);
+
+        int count = 100;
+        int maxlen = 20;
+        int maxvalure = 1000;
+        for (int i = 0; i < count; i++) {
+            insertSort(randomArr(maxlen, maxvalure));
+
+            System.out.println("-------");
+        }
         //
     }
 }
