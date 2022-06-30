@@ -58,16 +58,58 @@ public class SelectionSort {
         if (len < 2) {
             len += 1;
         }
-
-
         int[] b = new int[len];
         for (int i = 0; i < b.length; i++) {
             b[i] = (int) (Math.random() * maxValue);
 
         }
-
-
         return b;
+    }
+
+    //arr有序 >= num 最左
+    public static int findNumIndexLeft(int[] arr, int num) {
+        int l = 0;
+        int r = arr.length - 1;
+        int t = -1;
+        while (l <= r) {
+
+            int mid = (l + r) / 2;
+
+            if (arr[mid] >= num) {
+
+                t = mid;
+                r = mid - 1;
+
+            } else {
+
+                l = mid + 1;
+
+
+            }
+        }
+
+
+        return t;
+    }
+
+    public static int findNumIndexRit(int[] arr, int num) {
+        int l = 0;
+        int r = arr.length - 1;
+        int t = -1;
+
+        while (l <= r) {
+
+            int mid = (l + r) / 2;
+            if (arr[mid] >= num) {
+                t = mid;
+                l = mid + 1;
+            } else {
+
+                r = mid - 1;
+            }
+        }
+
+        return t;
 
     }
 
@@ -78,11 +120,14 @@ public class SelectionSort {
         int count = 100;
         int maxlen = 20;
         int maxvalure = 1000;
-        for (int i = 0; i < count; i++) {
-            insertSort(randomArr(maxlen, maxvalure));
+//        for (int i = 0; i < count; i++) {
+//            insertSort(randomArr(maxlen, maxvalure));
+//
+//            //System.out.println("-------");
+//        }
 
-            System.out.println("-------");
-        }
-        //
+        int[] bb = {0, 1, 5, 6, 8, 10, 12};
+        System.out.println(findNumIndexRit(bb, 5));
+
     }
 }
