@@ -61,6 +61,14 @@ public class LianBiao {
             return ans;
         }
 
+        public V peek() {
+            V ans = null;
+            if (head != null) {
+                ans = head.value;
+            }
+            return ans;
+        }
+
     }
 
 
@@ -71,9 +79,9 @@ public class LianBiao {
         mySingQueue.add(1);
         mySingQueue.add("dsadsa");
         mySingQueue.add("dsadsaz22");
-        System.out.println(mySingQueue.poll());
-        System.out.println(mySingQueue.poll());
-        System.out.println(mySingQueue.poll());
+        System.out.println(mySingQueue.peek());
+        System.out.println(mySingQueue.peek());
+        System.out.println(mySingQueue.peek());
 
     }
 }
