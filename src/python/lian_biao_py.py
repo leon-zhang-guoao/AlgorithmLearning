@@ -65,9 +65,11 @@ class singer_stack:
 
 
 if __name__ == '__main__':
-    a = singer_stack()
-    a.add('a')
-    a.add('b')
-    a.add('c')
-    a.add('d')
-    a.get_all()
+    a = fuxu_lianbiao(1)
+    c = fuxu_lianbiao(1)
+    print(c)
+    print(a)
+    b = a
+    a = c
+    print(b)
+    print(a)

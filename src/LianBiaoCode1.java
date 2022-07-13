@@ -5,7 +5,7 @@ public class LianBiaoCode1 {
     public class ListNode {
         public int value;
         public ListNode next;
-    }
+    } 
 
 
     public static ListNode fin(ListNode head, int k) {
