@@ -1,37 +1,37 @@
-class LianBiaoCode:
+class Node:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 
-class Solution:
+class solution:
     def reverseKGroup(self, head, k):
         start = head
-        one = self.getLast(head, k)
-        if one is None:
+        end = self.get_end(start, k)
+        if end is None:
             return head
-        head = one
-        self.rever(start, one)
-        last = start
-        while last.next is not None:
-            start = last.next
-            end = self.getLast(start, k)
-            if end is None:
+        head = end
+        self.reverse(start, end)
+        last_end = start
+        while last_end.next is not None:
+            start = last_end.next
+            get_end = self.get_end(start, k)
+            if get_end is None:
                 return head
-            self.rever(start, end)
-            last.next = end
-            last = start
-        return one
+            self.reverse(start, get_end)
+            last_end.next = get_end
+            last_end = start
 
-    def getLast(self, head, k):
+        return head
+
+    def get_end(self, head, k):
         while k - 1 > 0:
             if head is not None:
                 head = head.next
             k -= 1
-
         return head
 
-    def rever(self, head, end):
+    def reverse(self, head, end):
         end = end.next
         pre = None
         cur = head
