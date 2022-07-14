@@ -1,3 +1,5 @@
+package LianBiaopg;
+
 public class LianBiao {
 
     public static class SingNode<V> {

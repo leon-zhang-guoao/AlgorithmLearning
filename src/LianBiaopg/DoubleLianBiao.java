@@ -1,3 +1,5 @@
+package LianBiaopg;
+
 public class DoubleLianBiao {
 
 
