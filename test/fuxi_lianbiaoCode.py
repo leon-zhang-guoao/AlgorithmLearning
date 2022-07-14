@@ -12,16 +12,15 @@ class solution:
             return head
         head = end
         self.reverse(start, end)
-        last_end = start
-        while last_end.next is not None:
-            start = last_end.next
+        last = start
+        while last.next is not None:
+            start = last.next
             get_end = self.get_end(start, k)
             if get_end is None:
                 return head
             self.reverse(start, get_end)
-            last_end.next = get_end
-            last_end = start
-
+            last.next = get_end
+            last = start
         return head
 
     def get_end(self, head, k):
