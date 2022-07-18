@@ -47,7 +47,7 @@ public class LianBiaoCode4 {
         }
         pre.next = cur1 == null ? cur2 : cur1;
 
-
+//
         return one;
     }
 
