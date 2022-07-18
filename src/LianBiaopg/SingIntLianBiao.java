@@ -24,6 +24,7 @@ public class SingIntLianBiao {
             this.head = null;
             this.length = 0;
             this.tail = null;
+
         }
 
         public void add(int i) {
@@ -55,6 +56,17 @@ public class SingIntLianBiao {
             }
             System.out.println();
             head = cur;
+        }
+
+        public int length() {
+            int i = 0;
+            while (head != null) {
+                System.out.println("limian: " + head);
+                head = head.next;
+                i++;
+            }
+            return i;
+
         }
     }
 }
