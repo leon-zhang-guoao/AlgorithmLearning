@@ -2,7 +2,7 @@ package LianBiaopg;
 
 public class LianBiaoCode4 {
 
-
+    //https://leetcode.cn/problems/merge-two-sorted-lists/
     public class ListNode {
         int val;
         ListNode next;
@@ -21,30 +21,34 @@ public class LianBiaoCode4 {
     }
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null || list2 == null) {
+            return list1 == null ? list2 : list1;
+        }
         int a = list1.val;
         int b = list2.val;
         // one 是 开头 小的
         ListNode one = a >= b ? list2 : list1;
-        ListNode two = a <= b ? list2 : list1;
-        ListNode one_cur = one;
-        ListNode two_cur = two;
-        one_cur.next = two_cur;
-        one_cur = one_cur.next;
+        ListNode cur2 = a < b ? list2 : list1;
+        //ListNode cur2 = one == list1 ? list2 : list1;
+        ListNode cur1 = one.next;
+        ListNode pre = one;
+        while (cur1 != null && cur2 != null) {
+            if (cur1.val <= cur2.val) {
 
-        while (one_cur != null && two_cur != null) {
-            if (one_cur.val <= two_cur.next.val){
-                two_cur.next = one_cur;
-                two_cur = two_cur.next;
+                pre.next = cur1;
+                cur1 = cur1.next;
             } else {
-                two_cur = two_cur.next;
-            }
+                pre.next = cur2;
+                cur2 = cur2.next;
 
+            }
+            pre = pre.next;
 
         }
+        pre.next = cur1 == null ? cur2 : cur1;
 
 
         return one;
-
     }
 
 
