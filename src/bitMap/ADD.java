@@ -31,7 +31,7 @@ public class ADD {
         int res = 0;
         while (b != 0) {
             if ((b & 1) != 0) {
-                res = add1(res,a);
+                res = add1(res, a);
             }
             a <<= 1;
             b >>>= 1;
@@ -39,9 +39,30 @@ public class ADD {
         return res;
     }
 
+    public static int l(int a, int b) {
+        return a * b;
+
+    }
+
     public static void main(String[] args) {
-        int i = mulite(3, 7);
-        System.out.println(i);
+        int a = 99;
+        int b = 99;
+
+        long l1 = System.nanoTime();
+
+        mulite(a,b);
+
+        long d1 = System.nanoTime();
+
+        System.out.println("wo de :" + (d1 - l1));
+
+        long l2 = System.nanoTime();
+
+        l(a,b);
+
+        long d2 = System.nanoTime();
+
+        System.out.println("xi tong :" + (d2 - l2));
 
     }
 
