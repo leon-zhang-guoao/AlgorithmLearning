@@ -16,7 +16,7 @@ public class ADD {
 
     //负数
     public static int negNum(int a) {
-        return add1(a, 1);
+        return add1(~a, 1);
     }
 
     //减法
@@ -39,30 +39,33 @@ public class ADD {
         return res;
     }
 
-    public static int l(int a, int b) {
-        return a * b;
+    public static boolean isNeg(int a) {
+
+        return a < 0;
+    }
+
+    public static int div(int a, int b) {
+
+        int x = isNeg(a) ? negNum(a) : a;
+        int y = isNeg(b) ? negNum(b) : b;
+        int res = 0;
+        for (int i = 30; i >= 0; i = add1(i, 1)) {
+            if ((x >> i) >= y) {
+                res |= (1 << i);
+                x = neg(x, y << i);
+
+            }
+
+        }
+
+        return isNeg(a) ^ isNeg(b) ? negNum(res) : res;
+
 
     }
 
+
     public static void main(String[] args) {
-        int a = 99;
-        int b = 99;
 
-        long l1 = System.nanoTime();
-
-        mulite(a,b);
-
-        long d1 = System.nanoTime();
-
-        System.out.println("wo de :" + (d1 - l1));
-
-        long l2 = System.nanoTime();
-
-        l(a,b);
-
-        long d2 = System.nanoTime();
-
-        System.out.println("xi tong :" + (d2 - l2));
 
     }
 
