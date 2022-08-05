@@ -18,6 +18,7 @@ def random_a():
 
     print(count)
 
-#dd
+
+# dd
 if __name__ == '__main__':
-    print(299994829/1000000000)
+    print(299994829 / 1000000000)
