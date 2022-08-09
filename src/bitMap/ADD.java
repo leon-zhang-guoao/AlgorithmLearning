@@ -1,5 +1,8 @@
 package bitMap;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 //用二进制实现加法
 public class ADD {
     //加法
@@ -65,6 +68,12 @@ public class ADD {
 
 
     public static void main(String[] args) {
+
+        int[] arr = {1,4,2,5,0,86,4,23,4343,5};
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
 
 
     }
